@@ -8,21 +8,40 @@ export const TEL_URL = `tel:${BRAND.phoneIntl}`;
 export const MAIL_URL = `mailto:${BRAND.email}`;
 
 const CARDS = [
-  { icon: Phone, label: "Phone", value: BRAND.phone, href: TEL_URL },
-  { icon: MessageCircle, label: "WhatsApp", value: BRAND.phone, href: WHATSAPP_URL },
-  { icon: Mail, label: "Email", value: BRAND.email, href: MAIL_URL },
-  { icon: MapPin, label: "Location", value: BRAND.location },
+  {
+    icon: Phone,
+    label: "Phone",
+    value: BRAND.phone,
+    href: TEL_URL,
+  },
+  {
+    icon: MessageCircle,
+    label: "WhatsApp",
+    value: BRAND.phone,
+    href: WHATSAPP_URL,
+  },
+  {
+    icon: Mail,
+    label: "Email",
+    value: BRAND.email,
+    href: MAIL_URL,
+  },
+  {
+    icon: MapPin,
+    label: "Location",
+    value: BRAND.location,
+  },
 ];
 
 export function Contact() {
   return (
-    <section id="contact" className="scroll-mt-24 bg-secondary/60 px-5 py-20 sm:py-28">
-      <div className="mx-auto max-w-6xl">
+    <section id="contact">
+      <div className="container mx-auto px-4">
         <SectionHeading
           eyebrow="Contact"
           title={
             <>
-              We are a call away in <span className="text-gradient-brand">Ambassa.</span>
+              We are a call away in Ambassa.
             </>
           }
           subtitle="Questions about an order, delivery area or the app? Reach us any way you like."
@@ -32,17 +51,23 @@ export function Contact() {
           <div className="grid gap-4 sm:grid-cols-2">
             {CARDS.map((c, i) => {
               const Icon = c.icon;
+
               const inner = (
                 <>
                   <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-brand text-primary-foreground">
                     <Icon className="h-5 w-5" />
                   </span>
+
                   <p className="mt-4 text-xs font-semibold tracking-[0.18em] text-muted-foreground uppercase">
                     {c.label}
                   </p>
-                  <p className="mt-1 text-sm font-semibold break-words">{c.value}</p>
+
+                  <p className="mt-1 break-words text-sm font-semibold">
+                    {c.value}
+                  </p>
                 </>
               );
+
               return (
                 <Reveal key={c.label} delay={i * 0.06}>
                   {c.href ? (
@@ -69,21 +94,26 @@ export function Contact() {
                 href={TEL_URL}
                 className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-gradient-brand px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow"
               >
-                <Phone className="h-4 w-4" /> Call
+                <Phone className="h-4 w-4" />
+                Call
               </a>
+
               <a
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex flex-1 items-center justify-center gap-2 rounded-full border border-border bg-card px-6 py-3.5 text-sm font-semibold"
               >
-                <MessageCircle className="h-4 w-4" /> WhatsApp
+                <MessageCircle className="h-4 w-4" />
+                WhatsApp
               </a>
+
               <a
                 href={MAIL_URL}
                 className="inline-flex flex-1 items-center justify-center gap-2 rounded-full border border-border bg-card px-6 py-3.5 text-sm font-semibold"
               >
-                <Mail className="h-4 w-4" /> Email
+                <Mail className="h-4 w-4" />
+                Email
               </a>
             </div>
           </div>
