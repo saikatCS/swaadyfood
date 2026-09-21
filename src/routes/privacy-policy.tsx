@@ -30,26 +30,27 @@ const SECTIONS: { heading: string; body: string[] }[] = [
     heading: "1. Information we collect",
     body: [
       "When you use the Swaady app we collect the details needed to prepare and deliver your order: your name, mobile number, email address, date of birth, delivery addresses and order history.",
-      "With your permission, the app also uses your device location to show accurate delivery addresses and to keep live order tracking correct.",
+      "With your permission, the app also uses your device location to detect and fill in your delivery address automatically. You can deny this and enter your address manually instead.",
     ],
   },
   {
     heading: "2. How we use your information",
     body: [
-      "Your information is used to process orders, arrange delivery, provide live tracking, handle payments, send order updates and respond to support requests.",
+      "Your information is used to process orders, arrange delivery, share order status updates, and respond to support requests.",
       "We may use anonymised, aggregated information to understand demand patterns and improve delivery times in Ambassa and the wider Dhalai District.",
     ],
   },
   {
     heading: "3. Payments",
     body: [
-      "Online payments are handled by trusted third-party payment processors. Swaady does not store your full card details, UPI credentials or banking passwords on its own systems.",
+      "Orders are currently paid for via Cash on Delivery — please have the order amount ready for your delivery partner. We do not collect or store any card, UPI, or banking details through the app at this time.",
+      "We plan to introduce additional online payment methods in the future through trusted third-party payment processors. If we do, this policy will be updated beforehand to reflect exactly what payment data is collected and how it's handled, and we will never store your full card details, UPI credentials, or banking passwords on our own systems.",
     ],
   },
   {
     heading: "4. Sharing your information",
     body: [
-      "Order details are shared with the partner kitchen preparing your food and with the delivery rider assigned to your order, limited to what is required to complete the delivery.",
+      "Order details — your name, phone number, and delivery address — are shared with the partner kitchen preparing your food and with the delivery rider assigned to your order, limited to what is required to complete the delivery.",
       "We do not sell your personal information. Information is disclosed to authorities only where required by applicable law.",
     ],
   },
@@ -74,7 +75,7 @@ const SECTIONS: { heading: string; body: string[] }[] = [
   {
     heading: "8. Your rights",
     body: [
-      "You may request access to, correction of, or deletion of your personal information at any time. You can also withdraw location permission from your device settings, though live tracking accuracy may be reduced.",
+      "You may request access to, correction of, or deletion of your personal information at any time. You can also withdraw location permission from your device settings — you'll just need to enter your delivery address manually instead.",
     ],
   },
   {
@@ -86,7 +87,7 @@ const SECTIONS: { heading: string; body: string[] }[] = [
   {
     heading: "10. Changes to this policy",
     body: [
-      "This policy may be updated as the service evolves. Material changes will be announced within the app and on this page.",
+      "This policy may be updated as the service evolves — for example, when we add online payments or real-time delivery tracking. Material changes will be announced within the app and on this page.",
     ],
   },
   {
@@ -110,7 +111,7 @@ function PrivacyPolicy() {
             Privacy <span className="text-gradient-brand">Policy</span>
           </h1>
           <p className="mt-4 text-sm text-muted-foreground">
-            Last updated: January 2026 · Applies to the Swaady app and this website.
+            Last updated: September 2026 · Applies to the Swaady app and this website.
           </p>
 
           <div className="mt-12 space-y-8">
