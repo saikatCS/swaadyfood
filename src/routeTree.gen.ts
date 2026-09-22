@@ -10,12 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as DeleteAccountPolicyRouteImport } from './routes/delete-account-policy'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DeleteAccountPolicyRoute = DeleteAccountPolicyRouteImport.update({
+  id: '/delete-account-policy',
+  path: '/delete-account-policy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
@@ -31,30 +37,39 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/delete-account-policy': typeof DeleteAccountPolicyRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/delete-account-policy': typeof DeleteAccountPolicyRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/delete-account-policy': typeof DeleteAccountPolicyRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/privacy-policy' | '/sitemap.xml'
+  fullPaths: '/' | '/delete-account-policy' | '/privacy-policy' | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/privacy-policy' | '/sitemap.xml'
-  id: '__root__' | '/' | '/privacy-policy' | '/sitemap.xml'
+  to: '/' | '/delete-account-policy' | '/privacy-policy' | '/sitemap.xml'
+  id:
+    | '__root__'
+    | '/'
+    | '/delete-account-policy'
+    | '/privacy-policy'
+    | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DeleteAccountPolicyRoute: typeof DeleteAccountPolicyRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
@@ -66,6 +81,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/delete-account-policy': {
+      id: '/delete-account-policy'
+      path: '/delete-account-policy'
+      fullPath: '/delete-account-policy'
+      preLoaderRoute: typeof DeleteAccountPolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy-policy': {
@@ -87,6 +109,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DeleteAccountPolicyRoute: DeleteAccountPolicyRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
 }

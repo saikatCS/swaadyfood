@@ -43,6 +43,13 @@ export function Footer() {
             >
               Privacy Policy
             </Link>
+
+            <Link
+              to="/delete-account-policy"
+              className="text-muted-foreground hover:text-primary"
+            >
+              Delete Account Policy
+            </Link>
           </nav>
 
           {/* Contact */}

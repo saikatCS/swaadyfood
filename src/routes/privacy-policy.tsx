@@ -1,3 +1,4 @@
+// cspell:words Swaady Ambassa Dhalai anonymised
 import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
@@ -81,7 +82,7 @@ const SECTIONS: { heading: string; body: string[] }[] = [
   {
     heading: "9. Children",
     body: [
-      "The Swaady app is not intended for use by children under 13, and we do not knowingly collect personal information from them.",
+      "The Swaady app is intended for use by adults aged 18 and over. We do not knowingly collect personal information from anyone under 18, and the service should not be used by minors without the involvement of a parent or guardian who takes responsibility for the order, payment, and delivery.",
     ],
   },
   {
